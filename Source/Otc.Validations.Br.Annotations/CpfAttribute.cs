@@ -1,4 +1,4 @@
-﻿using Otc.ComponentModel.DataAnnotations;
+using Otc.ComponentModel.DataAnnotations;
 
 namespace Otc.Validations.Br.Annotations
 {
@@ -11,7 +11,9 @@ namespace Otc.Validations.Br.Annotations
             var cpf = value?.ToString();
 
             if (string.IsNullOrEmpty(cpf) && !IsRequired)
+            {
                 return true;
+            }
 
             return CpfValidation.IsValid(cpf);
         }

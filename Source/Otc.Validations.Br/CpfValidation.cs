@@ -1,5 +1,3 @@
-﻿using System;
-
 namespace Otc.Validations.Br
 {
     public static class CpfValidation
@@ -8,7 +6,9 @@ namespace Otc.Validations.Br
         public static bool IsValid(string cpf)
         {
             if (string.IsNullOrWhiteSpace(cpf))
+            {
                 return false;
+            }
 
             cpf = cpf.PadLeft(11, '0');
             var retorno = true;

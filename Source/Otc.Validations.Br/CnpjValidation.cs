@@ -1,5 +1,3 @@
-﻿using System;
-
 namespace Otc.Validations.Br
 {
     public static class CnpjValidation
@@ -30,7 +28,7 @@ namespace Otc.Validations.Br
             else
                 resto = 11 - resto;
             digito = resto.ToString();
-            tempCnpj = tempCnpj + digito;
+            tempCnpj += digito;
             soma = 0;
             for (int i = 0; i < 13; i++)
                 soma += int.Parse(tempCnpj[i].ToString()) * multiplicador2[i];
@@ -39,7 +37,7 @@ namespace Otc.Validations.Br
                 resto = 0;
             else
                 resto = 11 - resto;
-            digito = digito + resto.ToString();
+            digito += resto.ToString();
 
             string[] listaCnpjsInvalidos = { "00000000000000", "11111111111111", "22222222222222", "33333333333333",
                                             "44444444444444", "55555555555555", "66666666666666", "77777777777777",
